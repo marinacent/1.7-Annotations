@@ -10,6 +10,11 @@ import java.io.IOException;
 public class JsonSerializer {
     private static final ObjectMapper mapper = new ObjectMapper();
 
+    public static boolean checkIfSerializable(Object object) {
+        Class<?> objectClass = object.getClass();
+        return objectClass.isAnnotationPresent(JsonSerializable.class);
+    }
+
     public static String serialize(Object object) {
 
         try {
