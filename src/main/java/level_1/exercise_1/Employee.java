@@ -1,4 +1,4 @@
-package level_1;
+package level_1.exercise_1;
 
 public class Employee {
     public String name;

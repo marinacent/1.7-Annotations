@@ -1,4 +1,4 @@
-package level_1;
+package level_1.exercise_1;
 
 public class Main {
 
@@ -12,6 +12,8 @@ public class Main {
         System.out.println(sophia.computeSalary(MONTHLY_HOURS));
         System.out.println(joan.computeSalary(MONTHLY_HOURS));
         System.out.println(irene.computeSalary(MONTHLY_HOURS));
+
+        DeprecatedMethodsCaller.callDeprecatedMethods(joan, irene, MONTHLY_HOURS);
 
     }
 }
