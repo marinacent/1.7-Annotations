@@ -20,7 +20,7 @@ public class JsonSerializer {
 
     }
 
-    public static String getJsonPath(Object object) {
+    public static String getOutDir(Object object) {
         Class<?> objectClass = object.getClass();
         if (objectClass.isAnnotationPresent(JsonSerializable.class)) {
             JsonSerializable annotation = objectClass.getAnnotation(JsonSerializable.class);

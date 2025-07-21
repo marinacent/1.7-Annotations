@@ -1,5 +1,6 @@
 package level_2;
 
+@JsonSerializable(directory = "src/data")
 public class Person {
     private String name;
     private String surname;
