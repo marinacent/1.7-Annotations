@@ -6,5 +6,6 @@ public class Main {
         Person joan = new Person("Joan", "Pastor", 55);
 
         JsonSerializer.serialize(sophia);
+        JsonSerializer.serialize(joan);
     }
 }
