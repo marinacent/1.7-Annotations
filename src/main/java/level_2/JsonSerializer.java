@@ -8,18 +8,6 @@ import java.io.File;
 public class JsonSerializer {
     private static final ObjectMapper mapper = new ObjectMapper();
 
-    public static String serialize(Object object) {
-
-        try {
-            return mapper.writeValueAsString(object);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-            // FIX THIS
-            return null;
-        }
-
-    }
-
     public static String getOutDir(Object object) {
         Class<?> objectClass = object.getClass();
         if (objectClass.isAnnotationPresent(JsonSerializable.class)) {
@@ -30,7 +18,8 @@ public class JsonSerializer {
         return " ";
     }
 
-    public static void saveInFile(Object object, String dir) {
+    public static void serialize(Object object) {
+        String dir = getOutDir(object);
         File out = new File(dir, "kdfhjdhfjhf");
         try {
             mapper.writeValue(out, object);
