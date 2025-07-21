@@ -1,4 +1,4 @@
-package level_1.exercise_1;
+package level_1;
 
 public class OnSiteEmployee extends Employee {
     private static final int PETROL = 140;

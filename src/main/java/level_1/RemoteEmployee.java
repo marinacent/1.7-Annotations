@@ -1,4 +1,4 @@
-package level_1.exercise_1;
+package level_1;
 
 public class RemoteEmployee extends Employee {
     public static final int INTERNET_FLAT_RATE = 40;
