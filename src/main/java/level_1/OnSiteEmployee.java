@@ -1,7 +1,7 @@
 package level_1;
 
 public class OnSiteEmployee extends Employee {
-    private static int petrol = 140;
+    private static final int PETROL = 140;
 
     public OnSiteEmployee(String name, String surname, double hourlyWage) {
         super(name, surname, hourlyWage);
@@ -9,7 +9,7 @@ public class OnSiteEmployee extends Employee {
 
     @Override
     public double computeSalary(int hoursWorked) {
-        return super.computeSalary((hoursWorked)) + petrol;
+        return super.computeSalary((hoursWorked)) + PETROL;
     }
 
 }
