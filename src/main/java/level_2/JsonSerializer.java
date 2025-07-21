@@ -3,17 +3,10 @@ package level_2;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.File;
 
 public class JsonSerializer {
     private static final ObjectMapper mapper = new ObjectMapper();
-
-    public static boolean checkIfSerializable(Object object) {
-        Class<?> objectClass = object.getClass();
-        return objectClass.isAnnotationPresent(JsonSerializable.class);
-    }
 
     public static String serialize(Object object) {
 
@@ -27,10 +20,22 @@ public class JsonSerializer {
 
     }
 
-    public static void saveInFile(String json, String outPath) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outPath))) {
-            writer.write(json);
-        } catch (IOException e) {
+    public static String getJsonPath(Object object) {
+        Class<?> objectClass = object.getClass();
+        if (objectClass.isAnnotationPresent(JsonSerializable.class)) {
+            JsonSerializable annotation = objectClass.getAnnotation(JsonSerializable.class);
+            return annotation.directory();
+        }
+        // FIX THIS!
+        return " ";
+    }
+
+    public static void saveInFile(Object object, String dir) {
+        File out = new File(dir, "kdfhjdhfjhf");
+        try {
+            mapper.writeValue(out, object);
+            // improve exception handling??
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
