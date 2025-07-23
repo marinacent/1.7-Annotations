@@ -47,8 +47,8 @@ Maven 4.0.0
 
 Run the following commands to execute each one of the Main classes:
 
-```java -cp target/classes level_1.Main```
+```mvn -q exec:java -Dexec.mainClass="level_1.Main"```
 
-```java -cp target/classes level_2.Main```
+```mvn -q exec:java -Dexec.mainClass="level_2.Main"```
 
-```java -cp target/classes level_3.Main```
+```mvn -q exec:java -Dexec.mainClass="level_3.Main"```
