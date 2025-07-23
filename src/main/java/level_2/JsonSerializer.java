@@ -19,6 +19,9 @@ public class JsonSerializer {
     }
 
     public static void serialize(Object object, String fileName) {
+        if (object == null || fileName == null) {
+            throw new IllegalArgumentException();
+        }
         String dir = getOutDir(object);
         DirectoryValidator.checkDirectoryExists(dir);
         File out = new File(dir, fileName);
