@@ -8,7 +8,7 @@ import java.io.IOException;
 public class JsonSerializer {
     private static final ObjectMapper mapper = new ObjectMapper();
 
-    public static String getOutDir(Object object) {
+    private static String getOutDir(Object object) {
         Class<?> objectClass = object.getClass();
         if (objectClass.isAnnotationPresent(JsonSerializable.class)) {
             JsonSerializable annotation = objectClass.getAnnotation(JsonSerializable.class);
