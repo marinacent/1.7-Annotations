@@ -1,8 +1,8 @@
 package level_1;
 
 public class RemoteEmployee extends Employee {
-    public static final int INTERNET_FLAT_RATE = 40;
-    public static final int HOURS_BEFORE_DAY_IN_OFFICE = 100;
+    private static final int INTERNET_FLAT_RATE = 40;
+    private static final int HOURS_BEFORE_DAY_IN_OFFICE = 100;
 
     public RemoteEmployee(String name, String surname, double hourlyWage) {
         super(name, surname, hourlyWage);
