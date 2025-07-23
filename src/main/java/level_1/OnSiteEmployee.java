@@ -10,18 +10,13 @@ public class OnSiteEmployee extends Employee {
 
     @Override
     public double computeSalary(int hoursWorked) {
-        if (hoursWorked < 0) {
-            throw new IllegalArgumentException("Hours worked cannot be negative.");
-        }
+        validateHoursWorked(hoursWorked);
         return super.computeSalary(hoursWorked) + PETROL_ALLOWANCE;
     }
 
     @Deprecated
     public double computeCoffeeFee(int hoursWorked) {
-        if (hoursWorked < 0) {
-            throw new IllegalArgumentException("Hours worked cannot be negative.");
-        }
-
+        validateHoursWorked(hoursWorked);
         return hoursWorked * COFFEE_FEE_PER_HOUR;
     }
 

@@ -11,7 +11,14 @@ public class Employee {
         this.hourlyWage = hourlyWage;
     }
 
+    protected static void validateHoursWorked(int hoursWorked) {
+        if (hoursWorked < 0) {
+            throw new IllegalArgumentException("Hours worked cannot be negative.");
+        }
+    }
+
     public double computeSalary(int hoursWorked) {
+        validateHoursWorked(hoursWorked);
         return hoursWorked * hourlyWage;
     }
 }
