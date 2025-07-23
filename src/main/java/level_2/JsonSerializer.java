@@ -24,7 +24,7 @@ public class JsonSerializer {
         }
         String dir = getOutDir(object);
         DirectoryValidator.checkDirectoryExists(dir);
-        File out = new File(dir, fileName);
+        File out = new File(dir, fileName + ".json");
         try {
             mapper.writeValue(out, object);
         } catch (IOException e) {
