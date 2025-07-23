@@ -1,9 +1,9 @@
 package level_1;
 
 public class Employee {
-    public String name;
-    public String surname;
-    public double hourlyWage;
+    private String name;
+    private String surname;
+    private double hourlyWage;
 
     public Employee(String name, String surname, double hourlyWage) {
         this.name = name;
