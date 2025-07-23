@@ -25,7 +25,7 @@ public class JsonSerializer {
         try {
             mapper.writeValue(out, object);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Failed to serialize object to JSON in " + out.getAbsolutePath(), e);
         }
     }
 }
