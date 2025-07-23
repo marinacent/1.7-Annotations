@@ -3,6 +3,7 @@ package level_2;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
+import java.io.IOException;
 
 public class JsonSerializer {
     private static final ObjectMapper mapper = new ObjectMapper();
@@ -17,14 +18,14 @@ public class JsonSerializer {
         }
     }
 
-    public static void serialize(Object object) {
+    public static void serialize(Object object, String fileName) {
         String dir = getOutDir(object);
-        File out = new File(dir, "kdfhjdhfjhf");
+        DirectoryValidator.checkDirectoryExists(dir);
+        File out = new File(dir, fileName);
         try {
             mapper.writeValue(out, object);
-            // improve exception handling??
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
