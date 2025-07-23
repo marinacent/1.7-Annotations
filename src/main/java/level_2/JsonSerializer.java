@@ -14,7 +14,7 @@ public class JsonSerializer {
             JsonSerializable annotation = objectClass.getAnnotation(JsonSerializable.class);
             return annotation.directory();
         } else {
-            throw new JsonSerializableAnnotationMissing();
+            throw new JsonSerializableAnnotationMissing(objectClass);
         }
     }
 
