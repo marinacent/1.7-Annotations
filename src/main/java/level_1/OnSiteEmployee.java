@@ -4,8 +4,8 @@ public class OnSiteEmployee extends Employee {
     private static final int PETROL_ALLOWANCE = 140;
     private static final double COFFEE_FEE_PER_HOUR = 0.1;
 
-    public OnSiteEmployee(String name, String surname, double hourlyWage) {
-        super(name, surname, hourlyWage);
+    public OnSiteEmployee(String name, String surname, double hourlyRate) {
+        super(name, surname, hourlyRate);
     }
 
     @Override

@@ -4,8 +4,8 @@ public class RemoteEmployee extends Employee {
     private static final int INTERNET_ALLOWANCE = 40;
     private static final int HOURS_PER_OFFICE_DAY = 100;
 
-    public RemoteEmployee(String name, String surname, double hourlyWage) {
-        super(name, surname, hourlyWage);
+    public RemoteEmployee(String name, String surname, double hourlyRate) {
+        super(name, surname, hourlyRate);
     }
 
     @Override

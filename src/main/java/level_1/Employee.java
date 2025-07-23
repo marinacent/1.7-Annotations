@@ -3,12 +3,12 @@ package level_1;
 public class Employee {
     private String name;
     private String surname;
-    private double hourlyWage;
+    private double hourlyRate;
 
-    public Employee(String name, String surname, double hourlyWage) {
+    public Employee(String name, String surname, double hourlyRate) {
         this.name = name;
         this.surname = surname;
-        this.hourlyWage = hourlyWage;
+        this.hourlyRate = hourlyRate;
     }
 
     protected static void validateHoursWorked(int hoursWorked) {
@@ -19,6 +19,6 @@ public class Employee {
 
     public double computeSalary(int hoursWorked) {
         validateHoursWorked(hoursWorked);
-        return hoursWorked * hourlyWage;
+        return hoursWorked * hourlyRate;
     }
 }
