@@ -1,7 +1,7 @@
 package level_1;
 
 public class OnSiteEmployee extends Employee {
-    private static final int PETROL = 140;
+    private static final int PETROL_ALLOWANCE = 140;
     private static final double COFFEE_FEE_PER_HOUR = 0.1;
 
     public OnSiteEmployee(String name, String surname, double hourlyWage) {
@@ -10,11 +10,18 @@ public class OnSiteEmployee extends Employee {
 
     @Override
     public double computeSalary(int hoursWorked) {
-        return super.computeSalary(hoursWorked) + PETROL;
+        if (hoursWorked < 0) {
+            throw new IllegalArgumentException("Hours worked cannot be negative.");
+        }
+        return super.computeSalary(hoursWorked) + PETROL_ALLOWANCE;
     }
 
     @Deprecated
     public double computeCoffeeFee(int hoursWorked) {
+        if (hoursWorked < 0) {
+            throw new IllegalArgumentException("Hours worked cannot be negative.");
+        }
+
         return hoursWorked * COFFEE_FEE_PER_HOUR;
     }
 

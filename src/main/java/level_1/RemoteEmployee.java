@@ -10,13 +10,17 @@ public class RemoteEmployee extends Employee {
 
     @Override
     public double computeSalary(int hoursWorked) {
+        if (hoursWorked < 0) {
+            throw new IllegalArgumentException("Hours worked cannot be negative.");
+        }
         return super.computeSalary(hoursWorked) + INTERNET_FLAT_RATE;
     }
 
     @Deprecated
     public int computeDaysInOffice(int hoursWorked) {
+        if (hoursWorked < 0) {
+            throw new IllegalArgumentException("Hours worked cannot be negative.");
+        }
         return hoursWorked / HOURS_BEFORE_DAY_IN_OFFICE;
     }
-
-
 }
