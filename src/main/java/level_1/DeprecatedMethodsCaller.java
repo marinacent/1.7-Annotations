@@ -3,17 +3,12 @@ package level_1;
 public class DeprecatedMethodsCaller {
 
     @SuppressWarnings("deprecation")
-    public static void callDeprecatedMethods(OnSiteEmployee onSite, RemoteEmployee remote,
-                                             int hoursWorked) {
+    public static double callComputeCoffeeFee(OnSiteEmployee onSite, int hoursWorked) {
+        return (onSite != null) ? onSite.computeCoffeeFee(hoursWorked) : 0.0;
+    }
 
-        if (onSite != null) {
-            System.out.println(onSite.computeCoffeeFee(hoursWorked));
-        }
-
-        if (remote != null) {
-            System.out.println(remote.computeDaysInOffice(hoursWorked));
-
-        }
-
+    @SuppressWarnings("deprecation")
+    public static int callComputeDaysInOffice(RemoteEmployee remote, int hoursWorked) {
+        return (remote != null) ? remote.computeDaysInOffice(hoursWorked) : 0;
     }
 }

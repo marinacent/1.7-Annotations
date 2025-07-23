@@ -13,7 +13,7 @@ public class Main {
         System.out.println(joan.computeSalary(MONTHLY_HOURS));
         System.out.println(irene.computeSalary(MONTHLY_HOURS));
 
-        DeprecatedMethodsCaller.callDeprecatedMethods(joan, irene, MONTHLY_HOURS);
-
+        System.out.println(DeprecatedMethodsCaller.callComputeCoffeeFee(joan, MONTHLY_HOURS));
+        System.out.println(DeprecatedMethodsCaller.callComputeDaysInOffice(irene, MONTHLY_HOURS));
     }
 }
