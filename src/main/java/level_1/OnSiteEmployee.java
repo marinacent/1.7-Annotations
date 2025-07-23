@@ -10,7 +10,7 @@ public class OnSiteEmployee extends Employee {
 
     @Override
     public double computeSalary(int hoursWorked) {
-        return super.computeSalary((hoursWorked)) + PETROL;
+        return super.computeSalary(hoursWorked) + PETROL;
     }
 
     @Deprecated
