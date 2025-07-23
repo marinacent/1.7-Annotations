@@ -6,8 +6,9 @@ public class Main {
 
     public static void main(String[] args) {
         Person sophia = new Person("Sophia", "Garcia", 45);
+        String sophiaName = "Sophia";
 
         AnnotationReader.readAnnotation(sophia);
-        AnnotationReader.readAnnotation("Sophia");
+        AnnotationReader.readAnnotation(sophiaName);
     }
 }
