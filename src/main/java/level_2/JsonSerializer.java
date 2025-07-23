@@ -1,6 +1,5 @@
 package level_2;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
@@ -13,9 +12,9 @@ public class JsonSerializer {
         if (objectClass.isAnnotationPresent(JsonSerializable.class)) {
             JsonSerializable annotation = objectClass.getAnnotation(JsonSerializable.class);
             return annotation.directory();
+        } else {
+            throw new JsonSerializableAnnotationMissing();
         }
-        // FIX THIS!
-        return " ";
     }
 
     public static void serialize(Object object) {
