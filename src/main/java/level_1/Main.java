@@ -9,11 +9,15 @@ public class Main {
         OnSiteEmployee joan = new OnSiteEmployee("Joan", "Pastor", 20);
         RemoteEmployee irene = new RemoteEmployee("Irene", "Vives", 20);
 
-        System.out.println(sophia.computeSalary(monthlyHours));
-        System.out.println(joan.computeSalary(monthlyHours));
-        System.out.println(irene.computeSalary(monthlyHours));
+        try {
+            System.out.println(sophia.computeSalary(monthlyHours));
+            System.out.println(joan.computeSalary(monthlyHours));
+            System.out.println(irene.computeSalary(monthlyHours));
 
-        System.out.println(DeprecatedMethodsCaller.callComputeCoffeeFee(joan, monthlyHours));
-        System.out.println(DeprecatedMethodsCaller.callComputeDaysInOffice(irene, monthlyHours));
+            System.out.println(DeprecatedMethodsCaller.callComputeCoffeeFee(joan, monthlyHours));
+            System.out.println(DeprecatedMethodsCaller.callComputeDaysInOffice(irene, monthlyHours));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
