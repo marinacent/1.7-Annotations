@@ -27,6 +27,7 @@ public class JsonSerializer {
         File out = new File(dir, fileName + ".json");
         try {
             mapper.writeValue(out, object);
+            System.out.println("Object serialized at " + out.getPath());
         } catch (IOException e) {
             throw new RuntimeException("Failed to serialize object to JSON in " + out.getAbsolutePath(), e);
         }
